@@ -1,0 +1,38 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="style.css">
+    <title>Generar Password</title>
+    <script>
+        function password(cadena) {
+            // Convierte todas las letras a minúsculas
+            cadena = cadena.toLowerCase();
+            // Elimina los espacios en blanco
+            cadena = cadena.replace(/\s/g, '');
+            // Reemplaza los caracteres especificados
+            cadena = cadena.replace(/a/g, '4');
+            cadena = cadena.replace(/e/g, '3');
+            cadena = cadena.replace(/i/g, '1');
+            cadena = cadena.replace(/o/g, '0');
+            return cadena;
+        }
+
+        function validar() {
+            var cadena = document.getElementById('cadena').value;
+            var resultado = password(cadena);
+            document.getElementById('resultado').innerText = "El resultado es: " + resultado;
+        }
+    </script>
+</head>
+<body>
+    <center>
+        <h1>Generar Password</h1>
+        <label for="cadena">Ingrese una cadena:</label>
+        <input type="text" id="cadena" /><br><br>
+        <button onclick="validar()">Generar</button><br><br>
+        <p id="resultado"></p>
+    </center>
+</body>
+</html>

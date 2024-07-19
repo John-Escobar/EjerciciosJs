@@ -1,0 +1,36 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="style.css">
+    <title>Sumar Arreglo de Números</title>
+    <script>
+        function sumarArreglo(arreglo) {
+            var suma = 0;
+            for (var i = 0; i < arreglo.length; i++) {
+                suma += arreglo[i];
+            }
+            return suma;
+        }
+
+        function validar() {
+            var arregloString = document.getElementById('arreglo').value;
+            var arreglo = arregloString.split(',').map(function(item) {
+                return parseInt(item.trim(), 10);
+            });
+            var resultado = sumarArreglo(arreglo);
+            document.getElementById('resultado').innerText = "La suma del arreglo es: " + resultado;
+        }
+    </script>
+</head>
+<body>
+    <center>
+        <h1>Sumar Arreglo de Números</h1>
+        <label for="arreglo">Ingrese un arreglo de números separados por coma:</label>
+        <input type="text" id="arreglo" /><br><br>
+        <button onclick="validar()">Sumar</button><br><br>
+        <p id="resultado"></p>
+    </center>
+</body>
+</html>

@@ -1,0 +1,36 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="style.css">
+    <title>Sumar Rango</title>
+    <script>
+        function sumarRango(numInicial, numFinal) {
+            var suma = 0;
+            for (var i = numInicial; i <= numFinal; i++) {
+                suma += i;
+            }
+            return suma;
+        }
+
+        function validar() {
+            var numInicial = parseInt(document.getElementById('numInicial').value);
+            var numFinal = parseInt(document.getElementById('numFinal').value);
+            var resultado = sumarRango(numInicial, numFinal);
+            document.getElementById('resultado').innerText = "La suma del rango es: " + resultado;
+        }
+    </script>
+</head>
+<body>
+    <center>
+        <h1>Sumar Rango</h1>
+        <label for="numInicial">Número Inicial:</label>
+        <input type="text" id="numInicial" /><br><br>
+        <label for="numFinal">Número Final:</label>
+        <input type="text" id="numFinal" /><br><br>
+        <button onclick="validar()">Calcular Suma</button><br><br>
+        <p id="resultado"></p>
+    </center>
+</body>
+</html>

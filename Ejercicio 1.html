@@ -1,0 +1,99 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Validar Contraseña</title>
+    <script>
+        function contrasenaValida(contraseña) {
+            return contraseña === "Contra123" || contraseña === "contra123";
+        }
+
+        function validar() {
+            var input = document.getElementById('contraseña').value;
+            var resultado = contrasenaValida(input);
+            document.getElementById('resultado').innerText = resultado ? "Contraseña válida" : "Contraseña inválida";
+        }
+    </script>
+</head>
+<body>
+    <center>
+    <table>
+        <tr>
+            <td colspan="2"><h1>Validar Contraseña</h1></td>
+        </tr>
+        <tr>
+            <td><label for="contraseña">Ingrese la contraseña:</label></td>
+            <td><input type="password" id="contraseña" /></td>
+        </tr>
+        <br>
+        <tr>
+            <td colspan="2"><button onclick="validar()">Validar</button></td>
+        </tr>
+        <tr>
+            <td colspan="2"><p id="resultado"></p></td>
+        </tr>
+    </table>
+    </center>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            background-color: #f0f8ff;
+            color: #333;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            height: 100vh;
+            margin: 0;
+        }
+        table {
+            border-collapse: collapse;
+            width: 100%;
+            max-width: 500px;
+            background-color: white;
+            box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+            border-radius: 8px;
+            overflow: hidden;
+        }
+        h1 {
+            color: #4a90e2;
+            text-align: center;
+            margin: 20px 0;
+        }
+        label {
+            font-size: 16px;
+            color: #333;
+        }
+        input[type="password"] {
+            padding: 8px;
+            font-size: 16px;
+            border: 1px solid #ccc;
+            border-radius: 4px;
+            width: 100%;
+            box-sizing: border-box;
+        }
+        button {
+            background-color: #4a90e2;
+            border: none;
+            border-radius: 5px;
+            color: white;
+            font-size: 16px;
+            padding: 10px 20px;
+            cursor: pointer;
+            transition: background-color 0.3s ease;
+            width: 100%;
+            text-align: center;
+            margin-top: 10px;
+        }
+        button:hover {
+            background-color: #357abd;
+        }
+        p {
+            text-align: center;
+            font-size: 18px;
+            color: #333;
+            margin: 20px 0;
+        }
+        </style>
+</body>
+</html>

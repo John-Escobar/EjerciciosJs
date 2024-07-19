@@ -1,0 +1,41 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="style.css">
+    <title>Calcular BMI</title>
+    <script>
+        function bmi(peso, altura) {
+            var bmiValue = peso / (altura * altura);
+            if (bmiValue < 18.5) {
+                return "Bajo de peso";
+            } else if (bmiValue >= 18.5 && bmiValue <= 24.9) {
+                return "Normal";
+            } else if (bmiValue >= 25 && bmiValue <= 29.9) {
+                return "Sobrepeso";
+            } else {
+                return "Obeso";
+            }
+        }
+
+        function validar() {
+            var peso = parseFloat(document.getElementById('peso').value);
+            var altura = parseFloat(document.getElementById('altura').value);
+            var resultado = bmi(peso, altura);
+            document.getElementById('resultado').innerText = "Resultado BMI: " + resultado;
+        }
+    </script>
+</head>
+<body>
+    <center>
+        <h1>Calcular BMI</h1>
+        <label for="peso">Ingrese su peso (kg):</label>
+        <input type="number" id="peso" step="any" /><br><br>
+        <label for="altura">Ingrese su altura (m):</label>
+        <input type="number" id="altura" step="any" /><br><br>
+        <button onclick="validar()">Calcular</button><br><br>
+        <p id="resultado"></p>
+    </center>
+</body>
+</html>

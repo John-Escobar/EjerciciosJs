@@ -1,0 +1,42 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="style.css">
+    <title>Sumar Arreglo</title>
+    <script>
+        function sumarArreglo(arreglo, posInicial, posFinal) {
+            var suma = 0;
+            for (var i = posInicial; i <= posFinal; i++) {
+                suma += arreglo[i];
+            }
+            return suma;
+        }
+
+        function validar() {
+            var arregloString = document.getElementById('arreglo').value;
+            var posInicial = parseInt(document.getElementById('posInicial').value);
+            var posFinal = parseInt(document.getElementById('posFinal').value);
+            var arreglo = arregloString.split(',').map(function(item) {
+                return parseInt(item.trim(), 10);
+            });
+            var resultado = sumarArreglo(arreglo, posInicial, posFinal);
+            document.getElementById('resultado').innerText = "La suma del arreglo en el rango es: " + resultado;
+        }
+    </script>
+</head>
+<body>
+    <center>
+        <h1>Sumar Arreglo</h1>
+        <label for="arreglo">Ingrese un arreglo de números separados por coma:</label>
+        <input type="text" id="arreglo" /><br><br>
+        <label for="posInicial">Posición Inicial:</label>
+        <input type="text" id="posInicial" /><br><br>
+        <label for="posFinal">Posición Final:</label>
+        <input type="text" id="posFinal" /><br><br>
+        <button onclick="validar()">Calcular</button><br><br>
+        <p id="resultado"></p>
+    </center>
+</body>
+</html>
